@@ -1,6 +1,6 @@
 {
     "name": "@lsby/ts_type_fun",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "",
     "scripts": {
         "clean": "gulp 清理一切",
@@ -23,5 +23,5 @@
         "url": "https://github.com/lsby/ts_tpe_fun/issues"
     },
     "homepage": "https://github.com/lsby/ts_tpe_fun#readme",
-    "main": "gulpfile.js"
+    "main": "src/index.ts"
 }
