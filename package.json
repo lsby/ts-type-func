@@ -1,0 +1,17 @@
+{
+    "name": "@lsby/ts_type_fun",
+    "private": true,
+    "version": "0.0.0",
+    "description": "",
+    "scripts": {
+        "clean": "gulp 清理一切",
+        "pub": "gulp 发布到npm"
+    },
+    "author": "",
+    "devDependencies": {
+        "@lsby/exec_cmd": "^0.0.11",
+        "gulp": "^4.0.2",
+        "typescript": "^4.5.2"
+    },
+    "dependencies": {}
+}
