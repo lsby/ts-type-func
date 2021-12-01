@@ -1,6 +1,6 @@
 {
     "name": "@lsby/ts_type_fun",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "description": "",
     "scripts": {
         "clean": "gulp 清理一切",
