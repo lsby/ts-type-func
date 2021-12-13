@@ -1,1 +1,1 @@
-export type 数组长度判定<arr extends any[], n extends number> = arr['length'] extends n ? true : false
+export type 数组长度判定<arr, n> = arr extends any[] ? (arr['length'] extends n ? true : false) : never

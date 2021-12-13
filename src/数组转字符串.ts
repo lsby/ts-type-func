@@ -1,4 +1,4 @@
-export type 数组转字符串<arr extends string[]> = arr extends []
+export type 数组转字符串<arr> = arr extends []
     ? ''
     : arr extends [infer a]
     ? a extends string

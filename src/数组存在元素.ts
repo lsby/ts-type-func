@@ -1,4 +1,4 @@
-export type 数组存在元素<数组 extends any[], 值> = 数组 extends []
+export type 数组存在元素<数组, 值> = 数组 extends []
     ? false
     : 数组 extends [infer a, ...infer as]
     ? a extends 值

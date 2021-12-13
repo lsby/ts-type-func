@@ -1,1 +1,1 @@
-export type 非<a extends boolean> = a extends true ? false : true
+export type 非<a> = a extends true ? false : true

@@ -1,4 +1,4 @@
-export type 递归替换层叠数组<层叠数组 extends any[], 旧值 extends string, 新值> = 层叠数组 extends []
+export type 递归替换层叠数组<层叠数组, 旧值, 新值> = 层叠数组 extends []
     ? []
     : 层叠数组 extends [infer a, ...infer as]
     ? a extends string
