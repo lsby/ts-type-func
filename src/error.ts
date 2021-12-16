@@ -1,4 +1,4 @@
-export interface error<msg extends string> {
+export interface error<msg extends string | any[] = ''> {
     __ERROR__: true
     msg: msg
 }
