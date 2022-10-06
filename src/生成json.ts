@@ -1,3 +1,4 @@
+import { 等于 } from './类型等价判定'
 import { 联合转元组 } from './联合转元组'
 
 type 对象转json<键们, 对象> = 键们 extends []
@@ -37,3 +38,5 @@ type 实例转json<实例> = 实例 extends object
     : never
 
 export type 生成json<a> = 实例转json<a>
+
+var a1: 等于<生成json<{ a: 1; b: '2'; c: { d: 1 } }>, '{"a":"1","b":"2","c":{"d":"1"}}'> = true

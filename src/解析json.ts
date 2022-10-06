@@ -1,5 +1,7 @@
 // https://github.com/jamiebuilds/json-parser-in-typescript-very-bad-idea-please-dont-use
 
+import { 等于 } from './类型等价判定'
+
 type ParserError<T extends string> = { error: true } & T
 type EatWhitespace<State extends string> = string extends State
     ? ParserError<'EatWhitespace got generic string type'>
@@ -55,3 +57,5 @@ export type 解析json<T extends string> = ParseJsonValue<T> extends infer Resul
         ? Result
         : ParserError<'ParseJsonValue returned unexpected Result'>
     : ParserError<'ParseJsonValue returned uninferrable Result'>
+
+var a: 等于<解析json<'{"a":"1"}'>, { a: '1' }> = true

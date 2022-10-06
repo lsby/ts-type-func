@@ -1,14 +1,7 @@
-import { 取对象键 } from './取对象键'
-import { 基础类型等价判定 } from './基础类型等价判定'
+import { 取对象键们 } from './取对象键'
+import { 基础类型等于 } from './基础类型等价判定'
+import { 等于 } from './类型等价判定'
 
-export type 删除对象指定键<obj, 删除键, 剩余键 = 取对象键<obj>> = 剩余键 extends []
-    ? {}
-    : 剩余键 extends [infer a, ...infer as]
-    ? as extends string[]
-        ? 基础类型等价判定<a, 删除键> extends true
-            ? {} & 删除对象指定键<obj, 删除键, as>
-            : a extends keyof obj
-            ? Record<a, obj[a]> & 删除对象指定键<obj, 删除键, as>
-            : never
-        : never
-    : never
+export type 删除对象指定键<obj, 删除键 extends string> = Omit<obj, 删除键>
+
+var a1: 等于<删除对象指定键<{ a: 1; b: '2' }, 'a'>, { b: '2' }> = true

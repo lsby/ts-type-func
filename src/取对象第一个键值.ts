@@ -1,6 +1,7 @@
-import { 取对象键 } from './取对象键'
+import { 取对象键们 } from './取对象键'
+import { 等于 } from './类型等价判定'
 
-export type 取对象第一个键值<obj> = 取对象键<obj> extends infer keys
+export type 取对象第一个键值<obj> = 取对象键们<obj> extends infer keys
     ? keys extends []
         ? never
         : keys extends [infer a, ...infer as]
@@ -9,3 +10,5 @@ export type 取对象第一个键值<obj> = 取对象键<obj> extends infer keys
             : never
         : never
     : never
+
+var a: 等于<取对象第一个键值<{ a: 1; b: '2' }>, ['a', 1]> = true

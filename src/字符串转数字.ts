@@ -1,5 +1,7 @@
 // https://github.com/type-challenges/type-challenges/issues/1520
 
+import { 等于 } from './类型等价判定'
+
 type NumberMap = {
     '0': []
     '1': [1]
@@ -22,3 +24,5 @@ export type 字符串转数字<T extends string, A extends any[] = []> = T exten
         ? 字符串转数字<T, [...Multiply10<A>, ...NumberMap[L]]>
         : never
     : A['length']
+
+var a1: 等于<字符串转数字<'1'>, 1> = true

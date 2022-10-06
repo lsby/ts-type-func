@@ -1,5 +1,7 @@
 // https://github.com/type-challenges/type-challenges/issues/4445
 
+import { 等于 } from './类型等价判定'
+
 type N1 = [any]
 type N2 = [any, any]
 type N3 = [any, any, any]
@@ -65,3 +67,5 @@ export type 求和<A extends string | number | bigint, B extends string | number
     ToTuple<B>,
     []
 >
+
+var a: 等于<求和<1, 2>, '3'> = true
