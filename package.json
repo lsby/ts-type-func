@@ -1,12 +1,13 @@
 {
     "name": "@lsby/ts_type_fun",
-    "version": "0.0.16",
+    "version": "0.0.17",
+    "main": "dist/esm/index.mjs",
     "exports": {
         "require": "./dist/cjs/index.js",
         "import": "./dist/esm/index.mjs"
     },
     "files": [
-        "/dist/*"
+        "/dist/**/*"
     ],
     "description": "",
     "scripts": {
@@ -29,6 +30,5 @@
     "bugs": {
         "url": "https://github.com/lsby/ts_tpe_fun/issues"
     },
-    "homepage": "https://github.com/lsby/ts_tpe_fun#readme",
-    "main": "src/index.ts"
+    "homepage": "https://github.com/lsby/ts_tpe_fun#readme"
 }
