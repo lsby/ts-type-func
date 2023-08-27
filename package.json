@@ -1,18 +1,25 @@
 {
     "name": "@lsby/ts_type_fun",
-    "version": "0.0.15",
+    "version": "0.0.16",
+    "exports": {
+        "require": "./dist/cjs/index.js",
+        "import": "./dist/esm/index.mjs"
+    },
+    "files": [
+        "/dist/*"
+    ],
     "description": "",
     "scripts": {
-        "clean": "gulp 清理一切",
-        "pub": "gulp 发布到npm"
+        "pub": "npm run build && npm publish --access=public",
+        "build:esm": "tsup src/index.ts --format esm --clean --dts -d dist/esm",
+        "build:cjs": "tsup src/index.ts --format cjs --clean --dts -d dist/cjs",
+        "build": "npm run build:esm && npm run build:cjs"
     },
     "author": "",
     "devDependencies": {
-        "@lsby/exec_cmd": "^0.0.11",
-        "gulp": "^4.0.2",
+        "tsup": "^7.2.0",
         "typescript": "^4.5.2"
     },
-    "dependencies": {},
     "repository": {
         "type": "git",
         "url": "git+https://github.com/lsby/ts_tpe_fun.git"
