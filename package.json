@@ -23,12 +23,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/lsby/ts_tpe_fun.git"
+        "url": "git+https://github.com/lsby/ts-type-func.git"
     },
     "keywords": [],
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/lsby/ts_tpe_fun/issues"
+        "url": "https://github.com/lsby/ts-type-func/issues"
     },
-    "homepage": "https://github.com/lsby/ts_tpe_fun#readme"
+    "homepage": "https://github.com/lsby/ts-type-func#readme"
 }
