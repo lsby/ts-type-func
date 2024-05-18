@@ -1,6 +1,6 @@
 {
-    "name": "@lsby/ts_type_fun",
-    "version": "0.0.17",
+    "name": "@lsby/ts-type-func",
+    "version": "0.0.1",
     "main": "dist/esm/index.mjs",
     "exports": {
         "require": "./dist/cjs/index.js",
