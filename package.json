@@ -1,34 +1,40 @@
 {
-    "name": "@lsby/ts-type-func",
-    "version": "0.0.2",
-    "main": "dist/esm/index.mjs",
-    "exports": {
-        "require": "./dist/cjs/index.js",
-        "import": "./dist/esm/index.mjs"
-    },
-    "files": [
-        "/dist/**/*"
-    ],
-    "description": "",
-    "scripts": {
-        "pub": "npm run build && npm publish --access=public",
-        "build:esm": "tsup src/index.ts --format esm --clean --dts -d dist/esm",
-        "build:cjs": "tsup src/index.ts --format cjs --clean --dts -d dist/cjs",
-        "build": "npm run build:esm && npm run build:cjs"
-    },
-    "author": "",
-    "devDependencies": {
-        "tsup": "^7.2.0",
-        "typescript": "^4.5.2"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/lsby/ts-type-func.git"
-    },
-    "keywords": [],
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/lsby/ts-type-func/issues"
-    },
-    "homepage": "https://github.com/lsby/ts-type-func#readme"
+  "name": "@lsby/ts-type-func",
+  "version": "0.0.2",
+  "type": "module",
+  "exports": {
+    "require": "./dist/cjs/index.cjs",
+    "import": "./dist/esm/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:all": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsup src/**/*.ts --format cjs --clean --dts -d dist/cjs",
+    "build:esm": "tsup src/**/*.ts --format esm --clean --dts -d dist/esm",
+    "check:all": "npm run check:format && npm run check:lint && npm run check:type",
+    "check:format": "prettier --write .",
+    "check:lint": "eslint . --fix",
+    "check:type": "tsc --noEmit",
+    "check:type:watch": "tsc --noEmit -w",
+    "pub:public": "npm run check:all && npm run test:base && npm run build:all && bumpp && npm publish --access public",
+    "test:base": "npm run check:all && vitest run",
+    "test:coverage": "npm run check:all && vitest run --coverage && open-cli ./coverage/index.html"
+  },
+  "dependencies": {
+    "vitest": "^2.0.2"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "@lsby/eslint-config": "^0.0.2",
+    "@types/node": "^20.12.10",
+    "@vitest/coverage-v8": "^2.0.2",
+    "bumpp": "^9.4.1",
+    "open-cli": "^8.0.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-packagejson": "^2.5.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
 }
